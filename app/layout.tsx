@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { fonts } from "./fonts";
 import { Providers } from "./providers";
+import NavBar from "./NavBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,9 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={fonts.rubik.variable}>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+      <Providers>
+        <body>
+          <NavBar />
+          <main>{children}</main>
+        </body>
+      </Providers>
     </html>
   );
 }
